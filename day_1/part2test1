@@ -1,0 +1,46 @@
+#!/usr/bin/env tclsh8.6
+set haystacks {
+	two1nine
+	eightwothree
+	abcone2threexyz
+	xtwone3four
+	4nineeightseven2
+	zoneight234
+	7pqrstsixteen
+}
+
+set needles {
+	one	1
+	two	2
+	three	3
+	four	4
+	five	5
+	six	6
+	seven	7
+	eight	8
+	nine	9
+	1	1
+	2	2
+	3	3
+	4	4
+	5	6
+	6	6
+	7	7
+	8	8	
+	9 	9
+}
+
+foreach haystack $haystacks {
+    foreach {needle value} $needles {
+        set start 0
+
+        while { [set start [string first $needle $haystack $start]] >= 0 } {
+
+           # if we get here, we found the needle.
+           puts "# line: $haystack $needle: pos: $start value: $value"
+    
+           # increment start by one
+           incr start
+       }
+    }
+}
