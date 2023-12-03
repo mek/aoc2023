@@ -312,7 +312,7 @@ Now, let's update `process-line`. We'll remove the possible check. We'll have to
 make sure to reset the colormax var for each game round. We should also check 
 to make sure not maxes are zero before we assume that will happen.
 
-`` tcl
+``` tcl
 <<procPart2ProcessLine>>=
 proc process-line { line } {
 
