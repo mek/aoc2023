@@ -429,11 +429,9 @@ if {[llength $argv]!=1} {
 ::aoc::input-check-file [set input_file [lindex $argv 0]]
 
 # We are ready to process.
-
+# Look for gears (part 2)
 <<part2proccessFile>>
 
-# Look for gears (part 2)
-<<lookForGears>>
 exit 0
 @
 ```

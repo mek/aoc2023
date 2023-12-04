@@ -61,7 +61,7 @@ if {[llength $argv]!=1} {
 ::aoc::input-check-file [set input_file [lindex $argv 0]]
 
 # We are ready to process.
-
+# Look for gears (part 2)
 # assume we are in the file working
 set in_file_p 1
 
@@ -158,32 +158,4 @@ foreach {before current after} {"" "" ""} break
 puts "# $total"
 puts "# $gears_total"
 
-# Look for gears (part 2)
-# Look for gears (part 2)
-foreach gear_locations [regexp -all -indices -inline {\*} $current] {
-    set power 1
-    set gear_location [lindex $gear_locations 0]
-    # we now have a single gear location in $gear_location
-    set gear_adjacent_count 0
-    foreach check_line {before after current} {
-        # get our number location, in the form [start end]
-        foreach num_location [regexp -all -indices -inline {[0-9]+} [set $check_line]] {
-            foreach {start end} $num_location {
-                foreach {search_start search_end} [check-limits $start $end 0 [expr $line_length - 1]] break
-                if {$gear_location >= $search_start && $gear_location <= $search_end} {
-                    incr gear_adjacent_count
-                    set power [ expr $power * [string range [set $check_line] $start $end]]
-                }
-            }
-        }
-    }
-    switch $gear_adjacent_count {
-        0 { continue }
-        1 { continue }
-        2 {
-            incr gears_total $power
-         }
-         default { puts "more that two adjacent number, bug?" }
-    }
-}
 exit 0
