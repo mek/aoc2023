@@ -437,3 +437,10 @@ if {[llength $argv]!=1} {
 exit 0
 @
 ```
+
+``` shell 
+$ make part2
+Running part2 example...
+# 553825
+# 93994191
+```
