@@ -13,7 +13,6 @@ Distance:  9  40  200
 @
 ```
 
-```
 Holding down the button charges the boat, and releasing the button allows 
 the boat to move. The time spent holding the button counts against your 
 given time. To win you have to go past the current record. 
