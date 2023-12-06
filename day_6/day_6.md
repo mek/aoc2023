@@ -4,8 +4,6 @@
 
 Push button racking
 
-``` shell
-
 ## Part 1
 
 ``` text
