@@ -232,6 +232,7 @@ Another problem is that we can miss things like `twoone`, which should report a 
 
 Once again, the double words are added about the single works to make sure the are found first. There are not additional changes that need to be made. 
 
+```
 <<part2.l>>=
 %{
 #include <stdio.h>
@@ -255,3 +256,30 @@ int total = 0; /* total of all calibration inputs */
 <<lexUserCode>>
 @
 ```
+
+Checking the data, gives the same answers as the TCL solution.
+
+```
+$ make part2 testdata2
+$ ./part2 < testdata2
+# 281
+$ ../part2.tcl testdata2 
+# 281
+$ make view-example2 view-data2
+# 281
+# 53515
+$ ../part2 < ../../data/day_1/part2.data
+# 53515
+```
+
+Comparing the two:
+
+```
+$ wc -l ../*.tcl *.l
+  144 ../part1.tcl
+  174 ../part2.tcl
+   59 part1.l
+   77 part2.l
+  454 total
+```
+
